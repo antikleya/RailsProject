@@ -1,0 +1,24 @@
+<table class="table table-striped" id="table">
+  <thead>
+  <tr>
+    <th>First name</th>
+    <th>Last name</th>
+    <th>Place of study</th>
+    <th colspan="<%= table.width %>">Scores</th>
+    <th>Sum</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% table_rows.each_with_index do |table_row, i| %>
+    <tr class="<%= "table_row#{i + 1}" %>">
+      <td class="first_name"><%= table_row[:participant].first_name %></td>
+      <td class="last_name"><%= table_row[:participant].last_name %></td>
+      <td class="place_of_study"><%= table_row[:participant].place_of_study %></td>
+      <% (1..table.width).each do |j| %>
+        <td class="<%= "#{j}score_column"%>"><%= table_row[:scores][j-1].value %></td>
+      <% end %>
+      <td class="sum_column"><%= table_row[:sum] %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

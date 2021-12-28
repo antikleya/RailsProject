@@ -1,0 +1,42 @@
+<div class="bg-white border rounded-5">
+  <div class="login-form bg-light mt-4 p-4">
+    <h4>Change score</h4>
+    <%= form_with(model: score, url: url, method: :patch, class: 'row g-3') do |form| %>
+      <% if score.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(score.errors.count, "error") %> prohibited this score from being saved:</h2>
+
+          <ul class="list-group">
+            <% score.errors.each do |error| %>
+              <li class="list-group-element"><%= error.full_message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div class="form-outline mb-4">
+        <%= form.label :value, class: 'form-label' %>
+        <%= form.number_field :value, class: 'form-control' %>
+        <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 97.6px;"></div><div class="form-notch-trailing"></div></div></div>
+
+      <div class="form-outline mb-4">
+        <%= form.label :position, class: 'form-label' %>
+        <%= form.number_field :position, class: 'form-control' %>
+        <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 97.6px;"></div><div class="form-notch-trailing"></div></div></div>
+      <%= fields model: Participant do |u| %>
+        <div class="form-outline mb-4">
+          <%= u.label 'First name', class: 'form-label' %>
+          <%= u.text_field :first_name, class: 'form-control' %>
+          <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 97.6px;"></div><div class="form-notch-trailing"></div></div></div>
+
+        <div class="form-outline mb-4">
+          <%= u.label 'Last name', class: 'form-label' %>
+          <%= u.text_field :last_name, class: 'form-control' %>
+          <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 97.6px;"></div><div class="form-notch-trailing"></div></div></div>
+      <% end %>
+
+
+      <%= form.submit class: 'btn btn-primary btn-block' %>
+    <% end %>
+  </div>
+</div>

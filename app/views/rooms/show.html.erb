@@ -1,0 +1,15 @@
+<div class="container" style="margin-top:10rem">
+  <div class="btn-group col-md-6 offset-md-3">
+    <%= link_to 'Add a participant', create_participant_path(@room), class: 'btn btn-primary text-light' %>
+    <%= link_to 'Edit room', edit_room_url(@room), class: 'btn btn-primary text-light' %>
+    <%= link_to 'Judges', admins_path, class: 'btn btn-primary text-light' %>
+    <%= link_to 'Delete room', room_path(@room), method: :delete, data: { confirm: 'Are you sure?' },  class: 'btn btn-primary text-light' %>
+    <%= link_to 'Back', rooms_path, class: 'btn btn-primary text-light' %>
+  </div>
+  <div class="pt-3">
+    <%= render 'table', table: @table, table_rows: @table_rows %>
+  </div>
+  <script>
+      <%= render 'table.js', options: (3..@table.width.to_i+2).to_a.join(', '), room: @room %>
+  </script>
+</div>

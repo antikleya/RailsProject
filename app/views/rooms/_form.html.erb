@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 offset-md-4">
+      <div class="login-form bg-light mt-4 p-4">
+        <h4><%= caption %></h4>
+        <%= form_with(model: room, class: 'row g-3') do |form| %>
+          <% if room.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(room.errors.count, "error") %> prohibited this room from being saved:</h2>
+
+              <ul>
+                <% room.errors.each do |error| %>
+                  <li><%= error.full_message %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+
+          <div class="col-12">
+            <%= form.label :name %>
+            <%= form.text_field :name, class: 'form-control' %>
+          </div>
+          <% if action_name == 'new' %>
+            <%= fields model: Table do |u| %>
+            <div class="col-12">
+              <%= u.label 'Amount of judges' %>
+              <%= u.text_field :width, class: 'form-control' %>
+            </div>
+            <% end %>
+          <% end %>
+
+          <div class="col-12">
+            <%= form.submit class: 'btn btn-dark float-end' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
