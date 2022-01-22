@@ -30,4 +30,71 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  activerecord:
+    models:
+      room: 'room'
+      participant: 'participant'
+      admin: 'judge'
+    attributes:
+      user:
+        name: 'Name'
+        password: 'Password'
+        password_confirmation: 'Password confirmation'
+        email: 'Email'
+      room:
+        name: 'Name'
+      table:
+        width: 'Amount of judges'
+      participant:
+        first_name: 'First name'
+        last_name: 'Last name'
+        place_of_study: 'Place of study'
+  global:
+    menu:
+      home_page: 'Home page'
+      login: 'Login'
+      logout: 'Log out'
+      profile: 'Profile'
+      signup: 'Sign up'
+  devise:
+    sessions:
+      new:
+        login: 'Login'
+        remember_me: 'Remember me'
+        caption: 'Log in'
+        sign_up: 'Sign up'
+  rooms:
+    index:
+      new_room: 'New room'
+      rooms: 'Existing rooms'
+    show:
+      add: 'Add participant'
+      edit: 'Edit room'
+      judges: 'Judges'
+      delete: 'Delete room'
+      back: 'Back'
+      confirmation: 'Are you sure?'
+    table:
+      first_name: 'First name'
+      last_name: 'Last name'
+      pos: 'Place of study'
+      scores: 'Scores'
+      sum: 'Sum'
+    new:
+      caption: 'New room'
+    edit:
+      caption: 'Edit room'
+  participants:
+    new:
+      caption: 'Add a participant'
+  admins:
+    index:
+      name: 'Judges'
+      add_judge: 'Add judge'
+      edit: 'Edit'
+      delete: 'Remove'
+    new:
+      name: 'Name'
+      caption: 'New judge'
+    edit:
+      caption: 'Edit judge'

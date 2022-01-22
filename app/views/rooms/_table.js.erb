@@ -64,7 +64,7 @@ function endEdit(input) {
         let lastName = row.getElementsByClassName('last_name')[0].innerHTML.trim();
 
         let scorePos = parseInt(td.className);
-        let actionUrl = '<%= edit_score_path(room) %>';
+        let actionUrl = '<%= edit_score_path(params[:locale], room) %>';
         let AUTH_TOKEN = document.getElementsByName('csrf-token')[0].getAttribute('content')
 
         let data = { score: { value: input.value.trim(), position: scorePos}, participant: {first_name: firstName, last_name: lastName}};

@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# admin controller
 class AdminsController < ApplicationController
   before_action :set_room
   before_action :set_admin, only: %i[update show destroy edit]
@@ -19,8 +22,7 @@ class AdminsController < ApplicationController
     if !user
       redirect_to create_admin_url(@room), notice: 'User with such a name does not exist'
     else
-      admin_ids = { user_id: user.id, room_id: @room.id }
-      @admin = Admin.new(admin_ids)
+      @admin = Admin.new(user_id: user.id, room_id: @room.id)
       if @admin.save
         redirect_to admins_url(@room), notice: 'Judge was successfully added.'
       else
@@ -34,13 +36,10 @@ class AdminsController < ApplicationController
     user = User.find_by(name: admin_params[:name])
     if !user
       redirect_to edit_admin_url(id: @room.id, admin_id: @admin.id), notice: 'User with such a name does not exist'
+    elsif @admin.update(user_id: user.id, room_id: @room.id)
+      redirect_to admins_url(@room), notice: 'Judge was successfully changed.'
     else
-      admin_ids = { user_id: user.id, room_id: @room.id }
-      if @admin.update(admin_ids)
-        redirect_to admins_url(@room), notice: 'Judge was successfully changed.'
-      else
-        render :edit, status: :unprocessable_entity
-      end
+      render :edit, status: :unprocessable_entity
     end
   end
 

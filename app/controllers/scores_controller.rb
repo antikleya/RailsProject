@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# scores controller
 class ScoresController < ApplicationController
   # before_action :set_score, only: %i[show edit update destroy]
   before_action :set_room, only: %i[update]
@@ -5,8 +8,7 @@ class ScoresController < ApplicationController
   # skip_before_action :verify_authenticity_token, only: %i[update]
 
   # GET /scores/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /scores or /scores.json
   def create

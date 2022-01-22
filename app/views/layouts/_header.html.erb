@@ -6,16 +6,21 @@
       </a>
 
       <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-        <li><%= link_to 'Home', root_path, class: 'btn btn-outline-light me-2' %></li>
+        <li><%= link_to t('global.menu.home_page'), root_path(params[:locale]), class: 'btn btn-outline-light me-2' %></li>
+        <% if I18n.locale == :en %>
+          <li><%= link_to 'Русский', root_path(locale: :ru), class: 'btn btn-outline-light me-2' %></li>
+        <% else %>
+          <li><%= link_to 'English', root_path(locale: :en), class: 'btn btn-outline-light me-2' %></li>
+        <% end %>
       </ul>
 
       <div class="text-end">
         <% if user_signed_in? %>
-          <%= link_to 'Log out', destroy_user_session_path, method: :delete, class: "btn btn-outline-light me-2" %>
-          <%= link_to 'Profile', edit_user_registration_path, class: "btn btn-warning" %>
+          <%= link_to t('global.menu.logout'), destroy_user_session_path(params[:locale]), method: :delete, class: "btn btn-outline-light me-2" %>
+          <%= link_to t('global.menu.profile'), edit_user_registration_path(params[:locale]), class: "btn btn-warning" %>
         <% else %>
-          <%= link_to 'Login', new_user_session_path, class: "btn btn-outline-light me-2" %>
-          <%= link_to 'Sign Up', new_user_registration_path, class: "btn btn-warning" %>
+          <%= link_to t('global.menu.login'), new_user_session_path(params[:locale]), class: "btn btn-outline-light me-2" %>
+          <%= link_to t('global.menu.signup'), new_user_registration_path(params[:locale]), class: "btn btn-warning" %>
         <% end %>
       </div>
     </div>

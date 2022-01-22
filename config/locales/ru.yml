@@ -1,0 +1,75 @@
+ru:
+  activerecord:
+    user:
+      name: 'Имя'
+      password: 'Пароль'
+      password_confirmation: 'Подтвердите пароль'
+      email: 'Email'
+    models:
+      room: 'комнату'
+      participant: 'участника'
+      admin: 'судью'
+    attributes:
+      room:
+        name: 'Название'
+      table:
+        width: 'Количество судей'
+      participant:
+        first_name: 'Имя'
+        last_name: 'Фамилия'
+        place_of_study: 'Место обучения'
+  global:
+    menu:
+      home_page: 'Главная страница'
+      login: 'Войти'
+      logout: 'Выйти'
+      profile: 'Профиль'
+      signup: 'Регистрация'
+  devise:
+    sessions:
+      user:
+        signed_in: 'Вы успешно вошли'
+        signed_out: 'Вы успешно вышли'
+      new:
+        login: 'Войти'
+        remember_me: 'Запомнить меня'
+        caption: 'Вход'
+        sign_up: 'Регистрация'
+    registration:
+      new:
+        caption: 'Регистрация'
+  rooms:
+    index:
+      new_room: 'Новая комната'
+      rooms: 'Комнаты'
+    show:
+      add: 'Добавить участника'
+      edit: 'Изменить комнату'
+      judges: 'Судья'
+      delete: 'Удалить комнату'
+      back: 'Назад'
+      confirmation: 'Вы уверены?'
+    table:
+      first_name: 'Имя'
+      last_name: 'Фамилия'
+      pos: 'Место обучения'
+      scores: 'Оценки'
+      sum: 'Сумма'
+    new:
+      caption: 'Новая комната'
+    edit:
+      caption: 'Изменить комнату'
+  participants:
+    new:
+      caption: 'Добавить участника'
+  admins:
+    index:
+      name: 'Судьи'
+      add_judge: 'Добавить судью'
+      edit: 'Редактировать'
+      delete: 'Удалить'
+    new:
+      name: 'Имя'
+      caption: 'Добавить судью'
+    edit:
+      caption: 'Изменить судью'

@@ -23,7 +23,7 @@
           <% if action_name == 'new' %>
             <%= fields model: Table do |u| %>
             <div class="col-12">
-              <%= u.label 'Amount of judges' %>
+              <%= u.label t('activerecord.attributes.table.width') %>
               <%= u.text_field :width, class: 'form-control' %>
             </div>
             <% end %>

@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# participants controller
 class ParticipantsController < ApplicationController
   before_action :set_participant, only: %i[destroy]
   before_action :set_room, only: %i[create new]
@@ -25,7 +28,7 @@ class ParticipantsController < ApplicationController
     @participant.destroy
 
     respond_to do |format|
-      format.html { redirect_to participants_url, notice: "Participant was successfully destroyed." }
+      format.html { redirect_to participants_url, notice: 'Participant was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

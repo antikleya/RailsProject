@@ -1,6 +1,6 @@
 <div class="bg-white border rounded-5">
   <div class="login-form bg- mt-4 p-4">
-    <h4>Add a participant</h4>
+    <h4><%= t 'participants.new.caption' %></h4>
     <%= form_with(model: participant, url: url, class: 'row g-3', style: 'width: 22rem;') do |form| %>
       <% if participant.errors.any? %>
         <div id="error_explanation">
@@ -15,17 +15,17 @@
       <% end %>
 
       <div class="form-outline mb-4">
-        <%= form.label  'First name', class: 'form-label', style: 'margin-left: 0px' %>
+        <%= form.label :first_name, class: 'form-label', style: 'margin-left: 0px' %>
         <%= form.text_field :first_name, class: 'form-control' %>
         <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 97.6px;"></div><div class="form-notch-trailing"></div></div></div>
 
       <div class="form-outline mb-4">
-        <%= form.label 'Last name', class: 'form-label' %>
+        <%= form.label :last_name, class: 'form-label' %>
         <%= form.text_field :last_name, class: 'form-control' %>
         <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 97.6px;"></div><div class="form-notch-trailing"></div></div></div>
 
       <div class="form-outline mb-4">
-        <%= form.label 'Place of study', class: 'form-label' %>
+        <%= form.label :place_of_study, class: 'form-label' %>
         <%= form.text_field :place_of_study, class: 'form-control' %>
         <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 97.6px;"></div><div class="form-notch-trailing"></div></div></div>
 

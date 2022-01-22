@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-4 offset-md-4">
       <div class="login-form bg-light mt-4 p-4">
-        <h4>Log in</h4>
+        <h4><%= t '.caption' %></h4>
         <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'row g-3' }) do |f| %>
           <div class="col-12">
             <%= f.label :email %>
@@ -18,18 +18,18 @@
             <div class="col-12">
               <div class="form-check">
                 <%= f.check_box :remember_me, class: 'form-check-input', id: 'rememberMe' %>
-                <%= f.label :remember_me, class: 'form-check-label'%>
+                <%= f.label t('.remember_me'), class: 'form-check-label'%>
               </div>
             </div>
           <% end %>
 
           <div class="col-12">
-            <%= f.submit "Login", class: 'btn btn-dark float-end' %>
+            <%= f.submit t('.login'), class: 'btn btn-dark float-end' %>
           </div>
         <% end %>
         <hr class="mt-4">
         <div class="col-12">
-          <p class="text-center mb-0">Have not account yet? <%= link_to 'Sign up', new_user_registration_path %></p>
+          <p class="text-center mb-0">Have not account yet? <%= link_to t('.sign_up'), new_user_registration_path %></p>
         </div>
       </div>
     </div>
